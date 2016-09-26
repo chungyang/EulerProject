@@ -1,3 +1,4 @@
+//Find the sum of all primes under 2000000
 
 import java.util.Arrays;
 import java.util.Random;
