@@ -14,7 +14,6 @@
 
 
 import java.util.Arrays;
-import java.util.Random;
 
 public class LongestCollatzSequence {
 
@@ -35,28 +34,22 @@ public class LongestCollatzSequence {
 
         for(int i = 2; i < 1000000; i++){
 
-
             if(!produceLongest[i]){
                 continue;
             }
             produceNextNinChain(i);
-            //System.out.println("length " + length);
-
             if(length > longestLength){
-               // System.out.println("longest " + longestLength);
                 longestLength = length;
                 produceLongest[i] = true;
                 answer = i;
             }
             length = 0;
         }
-        System.out.println("answer " + answer);
+        System.out.println(answer);
     }
 
     //Given a number, this method produces the next number
     private static long produceNextNinChain(long n){
-
-        //System.out.println(n);
 
         if(n == 1){
             length++;
@@ -78,7 +71,5 @@ public class LongestCollatzSequence {
             return produceNextNinChain(3*n + 1);
         }
     }
-
-
 
 }
