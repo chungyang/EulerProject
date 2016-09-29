@@ -17,7 +17,7 @@ public class ParseTriangle implements Serializable{
 	
 	
 	try{
-	    FileOutputStream fileOut = new FileOutputStream("../ParsedTriangle.ser");
+	    FileOutputStream fileOut = new FileOutputStream("../ParsedTriangle2.ser");
 	    ObjectOutputStream out = new ObjectOutputStream(fileOut);
 	    out.writeObject(triangle);
 	    out.close();
@@ -31,7 +31,7 @@ public class ParseTriangle implements Serializable{
 
     private void parse() throws IOException{
 
-		FileReader input = new FileReader("../Triangle.txt");
+		FileReader input = new FileReader("../Triangle2.txt");
 		BufferedReader bufRead = new BufferedReader(input);
 		String numbersInRow;
 		int id = 0;

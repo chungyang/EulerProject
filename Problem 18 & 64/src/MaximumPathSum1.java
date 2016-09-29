@@ -63,7 +63,7 @@ public class MaximumPathSum1 {
 
         ParseTriangle t = null;
         try{
-            FileInputStream fileIn = new FileInputStream("ParsedTriangle.ser");
+            FileInputStream fileIn = new FileInputStream("ParsedTriangle2.ser");
             ObjectInputStream in = new ObjectInputStream(fileIn);
             t = (ParseTriangle) in.readObject();
             in.close();
