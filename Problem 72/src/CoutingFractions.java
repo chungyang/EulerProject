@@ -81,12 +81,18 @@ public class CoutingFractions {
 
                 number /= currentFactor;
 
+
+
                 if(previousFactor == currentFactor){
                     count *= currentFactor;
                 }
                 else{
                     count *= counts[currentFactor];
                     previousFactor = currentFactor;
+                }
+
+                if(number == 1){
+                    break;
                 }
 
             }
