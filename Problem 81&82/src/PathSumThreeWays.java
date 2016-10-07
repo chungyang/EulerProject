@@ -22,13 +22,23 @@ public class PathSumThreeWays {
         for (int i = gridSize - 2; i >= 0; i--) {
             // Traverse down
             sol[0] += matrix[0][i];
+            System.out.println("s[0]= "+sol[0]);
             for (int j = 1; j < gridSize; j++) {
+                System.out.println("j is: " + j);
+                System.out.println("s[j-1]= "+sol[j - 1]);
+                System.out.println("s[j]= "+sol[j]);
                 sol[j] = Math.min(sol[j - 1] + matrix[j][i], sol[j] + matrix[j][i]);
+                System.out.println("new s[j]= "+sol[j]);
+
             }
 
             //Traverse up
             for (int j = gridSize - 2; j >= 0; j--) {
+                System.out.println("j is: " + j);
+                System.out.println("s[j + 1]= " + sol[j + 1]);
+                System.out.println("s[j]= " + sol[j]);
                 sol[j] = Math.min(sol[j], sol[j+1] + matrix[j][i]);
+                System.out.println("new s[j]= "+sol[j]);
             }
         }
 
@@ -44,7 +54,7 @@ public class PathSumThreeWays {
     private static ParsedMatrix deSerializeParsedMatrix(){
         ParsedMatrix pm = null;
         try{
-            FileInputStream fileIn = new FileInputStream("ParsedMatrix4.ser");
+            FileInputStream fileIn = new FileInputStream("../ParsedMatrix3.ser");
             ObjectInputStream in = new ObjectInputStream(fileIn);
             pm = (ParsedMatrix) in.readObject();
             in.close();
